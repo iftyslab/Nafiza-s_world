@@ -1,0 +1,1540 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NAFIZA EMRAN IFTY | My Magical World</title>
+
+<style>
+
+/* =====================================================
+   BASIC
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Georgia,serif;
+    background:#030d0a;
+    color:white;
+    overflow-x:hidden;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+
+    background:
+        linear-gradient(
+            rgba(2,14,18,.25),
+            rgba(2,12,9,.88)
+        ),
+        url("https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=2200&q=90");
+
+    background-size:cover;
+    background-position:center;
+}
+
+
+/* =====================================================
+   MOON
+===================================================== */
+
+.moon{
+
+    position:absolute;
+
+    width:125px;
+    height:125px;
+
+    right:12%;
+    top:90px;
+
+    border-radius:50%;
+
+    background:#fffbd8;
+
+    box-shadow:
+        0 0 25px #fffbd8,
+        0 0 70px rgba(255,250,190,.6),
+        0 0 130px rgba(255,250,190,.3);
+
+    animation:moonGlow 4s infinite alternate;
+}
+
+@keyframes moonGlow{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.08);
+    }
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+nav{
+
+    position:relative;
+
+    z-index:100;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:25px 7%;
+
+    backdrop-filter:blur(5px);
+}
+
+.logo{
+
+    font-size:27px;
+
+    color:#ffeaa7;
+
+    text-shadow:
+        0 0 10px #ffeaa7,
+        0 0 25px #ffd86b;
+}
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    margin-left:25px;
+
+    transition:.3s;
+}
+
+nav a:hover{
+
+    color:#ffeaa7;
+
+    text-shadow:
+        0 0 15px #ffeaa7;
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:50;
+
+    text-align:center;
+
+    margin:auto;
+
+    padding:80px 20px 150px;
+}
+
+.hero-content h1{
+
+    font-size:
+        clamp(42px,8vw,88px);
+
+    color:#fff6c9;
+
+    text-shadow:
+        0 0 10px white,
+        0 0 30px #ffd86b,
+        0 0 70px #ffdc83;
+
+    animation:titleGlow 3s infinite alternate;
+}
+
+@keyframes titleGlow{
+
+    from{
+        opacity:.85;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+.hero-content h2{
+
+    margin-top:15px;
+
+    font-size:25px;
+
+    color:#e7f4df;
+}
+
+.hero-content p{
+
+    margin-top:12px;
+
+    font-size:18px;
+
+    color:#d7e8dc;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.magic-button{
+
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:14px 32px;
+
+    border:1px solid #ffeaa7;
+
+    border-radius:40px;
+
+    color:white;
+
+    text-decoration:none;
+
+    background:rgba(255,255,255,.08);
+
+    box-shadow:
+        0 0 20px rgba(255,230,140,.35);
+
+    transition:.4s;
+}
+
+.magic-button:hover{
+
+    background:#ffeaa7;
+
+    color:#122018;
+
+    transform:
+        scale(1.08);
+
+    box-shadow:
+        0 0 30px #ffeaa7,
+        0 0 70px rgba(255,230,140,.5);
+}
+
+
+/* =====================================================
+   FLYING FAIRY
+===================================================== */
+
+.fairy{
+
+    position:absolute;
+
+    width:105px;
+
+    left:-150px;
+
+    top:40%;
+
+    z-index:70;
+
+    filter:
+        drop-shadow(0 0 8px white)
+        drop-shadow(0 0 20px #ffd6ff);
+
+    animation:
+        fairyFly 18s linear infinite,
+        fairyFloat 2s ease-in-out infinite alternate;
+}
+
+@keyframes fairyFly{
+
+    0%{
+        left:-150px;
+        top:65%;
+    }
+
+    20%{
+        left:20%;
+        top:30%;
+    }
+
+    40%{
+        left:40%;
+        top:50%;
+    }
+
+    60%{
+        left:60%;
+        top:25%;
+    }
+
+    80%{
+        left:82%;
+        top:45%;
+    }
+
+    100%{
+        left:110%;
+        top:25%;
+    }
+}
+
+@keyframes fairyFloat{
+
+    from{
+        transform:
+            translateY(-14px)
+            rotate(-5deg);
+    }
+
+    to{
+        transform:
+            translateY(14px)
+            rotate(5deg);
+    }
+}
+
+
+/* =====================================================
+   STARS
+===================================================== */
+
+.star{
+
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+        0 0 12px white;
+
+    animation:
+        twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+
+    from{
+        opacity:.2;
+        transform:scale(.5);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1.6);
+    }
+}
+
+
+/* =====================================================
+   FIREFLIES
+===================================================== */
+
+.firefly{
+
+    position:absolute;
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#fff59d;
+
+    box-shadow:
+        0 0 10px #fff59d,
+        0 0 25px #fff59d;
+
+    animation:
+        fireflyMove 5s infinite alternate;
+}
+
+@keyframes fireflyMove{
+
+    0%{
+        transform:translate(0,0);
+        opacity:.2;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        transform:
+            translate(80px,-100px);
+        opacity:.2;
+    }
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+section{
+
+    padding:100px 8%;
+
+    background:
+        linear-gradient(
+            #061a14,
+            #030e0b
+        );
+}
+
+.section-title{
+
+    text-align:center;
+
+    font-size:42px;
+
+    color:#ffeaa7;
+
+    margin-bottom:50px;
+
+    text-shadow:
+        0 0 15px rgba(255,220,120,.6);
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about-box{
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:40px;
+
+    text-align:center;
+
+    line-height:1.9;
+
+    font-size:18px;
+
+    border-radius:25px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid
+        rgba(255,234,167,.25);
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+        0 0 30px rgba(0,0,0,.25);
+}
+
+
+/* =====================================================
+   PROFILE INFO
+===================================================== */
+
+.info{
+
+    max-width:700px;
+
+    margin:35px auto 0;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(200px,1fr));
+
+    gap:18px;
+}
+
+.info-card{
+
+    padding:22px;
+
+    text-align:center;
+
+    border-radius:18px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        1px solid
+        rgba(255,234,167,.18);
+}
+
+.info-card span{
+
+    display:block;
+
+    font-size:32px;
+
+    margin-bottom:10px;
+}
+
+.info-card h3{
+
+    color:#ffeaa7;
+
+    margin-bottom:7px;
+}
+
+
+/* =====================================================
+   SKILLS
+===================================================== */
+
+.cards{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(230px,1fr));
+
+    gap:25px;
+}
+
+.card{
+
+    padding:30px;
+
+    text-align:center;
+
+    border-radius:22px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    border:
+        1px solid
+        rgba(255,234,167,.22);
+
+    backdrop-filter:blur(10px);
+
+    transition:.4s;
+}
+
+.card:hover{
+
+    transform:
+        translateY(-12px);
+
+    box-shadow:
+        0 0 30px
+        rgba(255,230,140,.25);
+}
+
+.card-icon{
+
+    font-size:50px;
+
+    margin-bottom:15px;
+}
+
+.card h3{
+
+    color:#ffeaa7;
+
+    margin-bottom:12px;
+}
+
+.card p{
+
+    line-height:1.7;
+
+    color:#d7e5dc;
+}
+
+
+/* =====================================================
+   DREAM
+===================================================== */
+
+.dream{
+
+    min-height:500px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+
+        linear-gradient(
+            rgba(2,15,13,.45),
+            #04130f
+        ),
+
+        url("https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=2200&q=90");
+
+    background-size:cover;
+
+    background-position:center;
+}
+
+.dream-box{
+
+    max-width:800px;
+
+    padding:50px;
+
+    border-radius:30px;
+
+    background:
+        rgba(0,0,0,.3);
+
+    backdrop-filter:blur(7px);
+}
+
+.dream-box .dna{
+
+    font-size:70px;
+
+    animation:
+        dnaFloat 3s ease-in-out infinite alternate;
+}
+
+@keyframes dnaFloat{
+
+    from{
+        transform:translateY(-10px);
+    }
+
+    to{
+        transform:translateY(10px);
+    }
+}
+
+.dream-box h2{
+
+    font-size:48px;
+
+    color:#ffeaa7;
+
+    margin:15px 0;
+
+    text-shadow:
+        0 0 20px #ffd86b;
+}
+
+.dream-box p{
+
+    font-size:19px;
+
+    line-height:1.8;
+}
+
+
+/* =====================================================
+   ACHIEVEMENT
+===================================================== */
+
+.achievement{
+
+    max-width:500px;
+
+    margin:auto;
+
+    padding:40px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid
+        rgba(255,234,167,.25);
+
+    box-shadow:
+        0 0 30px rgba(255,220,130,.1);
+}
+
+.trophy{
+
+    font-size:70px;
+}
+
+.achievement h3{
+
+    color:#ffeaa7;
+
+    font-size:30px;
+
+    margin:15px 0;
+}
+
+
+/* =====================================================
+   CASTLE
+===================================================== */
+
+.castle-section{
+
+    min-height:500px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+
+        linear-gradient(
+            rgba(2,15,13,.35),
+            #061810
+        ),
+
+        url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2200&q=90");
+
+    background-size:cover;
+
+    background-position:center;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    padding:35px;
+
+    text-align:center;
+
+    background:#020a07;
+
+    color:#cbd8d0;
+}
+
+
+/* =====================================================
+   CLICK MAGIC
+===================================================== */
+
+.spark{
+
+    position:fixed;
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:#fff3a6;
+
+    box-shadow:
+        0 0 10px #fff3a6,
+        0 0 25px #ffe16b;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+    animation:
+        sparkMove .8s ease-out forwards;
+}
+
+@keyframes sparkMove{
+
+    0%{
+        opacity:1;
+        transform:scale(1);
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translate(
+                var(--x),
+                var(--y)
+            )
+            scale(.1);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    nav{
+
+        flex-direction:column;
+
+        gap:15px;
+    }
+
+    nav a{
+
+        margin:0 6px;
+
+        font-size:13px;
+    }
+
+    .hero-content{
+
+        padding-top:80px;
+    }
+
+    .moon{
+
+        width:80px;
+        height:80px;
+
+        right:7%;
+        top:100px;
+    }
+
+    .fairy{
+
+        width:75px;
+    }
+
+    .about-box{
+
+        padding:25px;
+    }
+
+    .dream-box{
+
+        padding:30px;
+    }
+
+    .dream-box h2{
+
+        font-size:35px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<div class="hero" id="home">
+
+
+    <!-- Moon -->
+
+    <div class="moon"></div>
+
+
+    <!-- Stars -->
+
+    <div class="star" style="top:12%;left:8%;"></div>
+
+    <div class="star" style="top:25%;left:22%;"></div>
+
+    <div class="star" style="top:15%;left:45%;"></div>
+
+    <div class="star" style="top:32%;left:68%;"></div>
+
+    <div class="star" style="top:18%;left:90%;"></div>
+
+    <div class="star" style="top:45%;left:55%;"></div>
+
+    <div class="star" style="top:55%;left:18%;"></div>
+
+
+    <!-- Fireflies -->
+
+    <div class="firefly" style="left:12%;top:75%;"></div>
+
+    <div class="firefly" style="left:28%;top:65%;animation-delay:1s;"></div>
+
+    <div class="firefly" style="left:48%;top:75%;animation-delay:2s;"></div>
+
+    <div class="firefly" style="left:70%;top:70%;animation-delay:3s;"></div>
+
+    <div class="firefly" style="left:88%;top:65%;animation-delay:1.5s;"></div>
+
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <div class="logo">
+            ✨ NAFIZA'S WORLD
+        </div>
+
+        <div>
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#skills">Skills</a>
+
+            <a href="#hobbies">Hobbies</a>
+
+            <a href="#dream">Dream</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Flying Fairy -->
+
+    <img
+        id="fairy"
+        class="fairy"
+        src="https://pngimg.com/uploads/fairy/fairy_PNG44.png"
+        alt="Flying Fairy"
+    >
+
+
+    <!-- Hero Content -->
+
+    <div class="hero-content">
+
+        <h1>
+            NAFIZA EMRAN IFTY
+        </h1>
+
+        <h2>
+            ✨ Welcome to My Magical World ✨
+        </h2>
+
+        <p>
+            Dream • Create • Learn • Believe
+        </p>
+
+        <a
+            href="#about"
+            class="magic-button"
+        >
+            Discover My Story 🌸
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     ABOUT ME
+===================================================== -->
+
+<section id="about">
+
+    <h2 class="section-title">
+        🌸 About Me
+    </h2>
+
+
+    <div class="about-box">
+
+        <p>
+            Yeah, I have so many thoughts about my life...
+            and I have so many dreams that I wish I could
+            fulfill one day.
+        </p>
+
+        <br>
+
+        <p>
+            I believe that every dream starts with a little
+            hope, a little courage and lots of hard work.
+        </p>
+
+        <br>
+
+        <p>
+            I wished that I could fulfill all of them...
+            So, pray for me. That's it. 💚
+        </p>
+
+        <br>
+
+        <p>
+            <strong>Allah Hafez ✨</strong>
+        </p>
+
+    </div>
+
+
+    <!-- Basic Information -->
+
+    <div class="info">
+
+        <div class="info-card">
+
+            <span>📚</span>
+
+            <h3>
+                Education
+            </h3>
+
+            <p>
+                Intermediate<br>
+                1st Year
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <span>🌱</span>
+
+            <h3>
+                Future Goal
+            </h3>
+
+            <p>
+                Biotechnologist
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section id="skills">
+
+    <h2 class="section-title">
+        💻 My Skills
+    </h2>
+
+
+    <div class="cards">
+
+
+        <!-- Office -->
+
+        <div class="card">
+
+            <div class="card-icon">
+                🖥️
+            </div>
+
+            <h3>
+                Office Applications
+            </h3>
+
+            <p>
+                Microsoft Word<br>
+                Microsoft Access<br>
+                Microsoft Excel<br>
+                Microsoft PowerPoint
+            </p>
+
+        </div>
+
+
+        <!-- Web Design -->
+
+        <div class="card">
+
+            <div class="card-icon">
+                🌐
+            </div>
+
+            <h3>
+                Web Design
+            </h3>
+
+            <p>
+                HTML<br>
+                CSS<br>
+                JavaScript
+            </p>
+
+        </div>
+
+
+        <!-- Programming -->
+
+        <div class="card">
+
+            <div class="card-icon">
+                💻
+            </div>
+
+            <h3>
+                Coding
+            </h3>
+
+            <p>
+                PHP<br>
+                MySQL<br>
+                JavaScript
+            </p>
+
+        </div>
+
+
+        <!-- Creative -->
+
+        <div class="card">
+
+            <div class="card-icon">
+                ✨
+            </div>
+
+            <h3>
+                Creativity
+            </h3>
+
+            <p>
+                Creative thinking,
+                designing and
+                learning new things.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     HOBBIES
+===================================================== -->
+
+<section id="hobbies">
+
+    <h2 class="section-title">
+        🎨 My Hobbies
+    </h2>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                💃
+            </div>
+
+            <h3>
+                Dance
+            </h3>
+
+            <p>
+                Dancing is one of the
+                things I enjoy.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                📖
+            </div>
+
+            <h3>
+                Novel Reading
+            </h3>
+
+            <p>
+                I love getting lost
+                in amazing stories.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🎨
+            </div>
+
+            <h3>
+                Painting
+            </h3>
+
+            <p>
+                Creating art and
+                expressing imagination.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🎧
+            </div>
+
+            <h3>
+                Listening to Songs
+            </h3>
+
+            <p>
+                Music is a beautiful
+                part of my free time.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DREAM
+===================================================== -->
+
+<section id="dream" class="dream">
+
+    <div class="dream-box">
+
+        <div class="dna">
+            🧬
+        </div>
+
+        <h2>
+            My Dream
+        </h2>
+
+        <p>
+            I dream of becoming a
+            <strong>Biotechnologist</strong>.
+        </p>
+
+        <br>
+
+        <p>
+            I want to keep learning,
+            explore science and someday
+            turn my dreams into reality.
+            🌱✨
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ACHIEVEMENT
+===================================================== -->
+
+<section>
+
+    <h2 class="section-title">
+        🏆 My Achievement
+    </h2>
+
+
+    <div class="achievement">
+
+        <div class="trophy">
+            🏆
+        </div>
+
+        <h3>
+            SSC — Grade A
+        </h3>
+
+        <p>
+            A proud milestone in my
+            educational journey. ✨
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAGICAL CASTLE
+===================================================== -->
+
+<section class="castle-section">
+
+    <h2 class="section-title">
+        🏰 My Magical Castle
+    </h2>
+
+    <p>
+        Every dream deserves a magical place. ✨
+    </p>
+
+    <br>
+
+    <p>
+        Keep dreaming. Keep learning.
+        Keep believing. 🌙
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <p>
+        Made with 💚, imagination and a little magic ✨
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 NAFIZA EMRAN IFTY
+    </p>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   FAIRY MAGIC DUST
+===================================================== */
+
+const fairy =
+document.getElementById("fairy");
+
+
+setInterval(function(){
+
+    const rect =
+    fairy.getBoundingClientRect();
+
+
+    const dust =
+    document.createElement("div");
+
+
+    dust.className =
+    "spark";
+
+
+    dust.style.left =
+    (rect.left + 20) + "px";
+
+
+    dust.style.top =
+    (rect.top + rect.height/2) + "px";
+
+
+    dust.style.setProperty(
+        "--x",
+        (Math.random()*40-20) + "px"
+    );
+
+
+    dust.style.setProperty(
+        "--y",
+        (-Math.random()*50) + "px"
+    );
+
+
+    document.body.appendChild(dust);
+
+
+    setTimeout(function(){
+
+        dust.remove();
+
+    },800);
+
+
+},180);
+
+
+
+/* =====================================================
+   CLICK MAGIC
+===================================================== */
+
+document.addEventListener(
+    "click",
+    function(e){
+
+        for(
+            let i=0;
+            i<15;
+            i++
+        ){
+
+            const spark =
+            document.createElement("div");
+
+
+            spark.className =
+            "spark";
+
+
+            spark.style.left =
+            e.clientX + "px";
+
+
+            spark.style.top =
+            e.clientY + "px";
+
+
+            const angle =
+            Math.random()
+            *Math.PI*2;
+
+
+            const distance =
+            30 +
+            Math.random()*90;
+
+
+            spark.style.setProperty(
+                "--x",
+                Math.cos(angle)
+                *distance + "px"
+            );
+
+
+            spark.style.setProperty(
+                "--y",
+                Math.sin(angle)
+                *distance + "px"
+            );
+
+
+            document.body.appendChild(spark);
+
+
+            setTimeout(
+                ()=>{
+                    spark.remove();
+                },
+                800
+            );
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   EXTRA RANDOM STARS
+===================================================== */
+
+for(
+    let i=0;
+    i<20;
+    i++
+){
+
+    const star =
+    document.createElement("div");
+
+
+    star.className =
+    "star";
+
+
+    star.style.top =
+    Math.random()*70 + "%";
+
+
+    star.style.left =
+    Math.random()*100 + "%";
+
+
+    star.style.animationDelay =
+    Math.random()*3 + "s";
+
+
+    document.querySelector(".hero")
+    .appendChild(star);
+
+}
+
+</script>
+
+
+</body>
+
+</html>
+```
